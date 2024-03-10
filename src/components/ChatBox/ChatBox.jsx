@@ -46,7 +46,7 @@ function ChatBox() {
 
     return (
         <div className="chatbox">
-            <div>
+            <div className="chatbox__conversation">
                 {
                     messages.map((message, index) => {
                         if (message.role === "CHATBOT") {

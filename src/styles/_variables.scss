@@ -1,3 +1,22 @@
-$paper: #fffef6;
+/* colors */
+
+// accessibility checks:
+// #FDF5ED background with #5b3a29 text is AAA compliant at small sizes
+// b7e1e6 background with #322116 text is AAA compliant at small size
+// #bdb6ab background with #322116 text is AAA compliant at small size
+//
+
+$paper: #fdf5ed;
+$paper-lines: #8a7e66;
+
+//other possibilities
+$secondary: #b2ac88; //earthy brown
+
+$primary-text: #5b3a29;
+$secondary-text: #322116;
+
+$primary-background: #b7e1e6;
+$secondary-background: #bdb6ab;
 
 $border-radius: 20px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

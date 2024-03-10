@@ -1,0 +1,15 @@
+@use "./variables.scss" as *;
+
+@mixin lined-background {
+  background-color: $paper;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 98%,
+    $paper-lines,
+    $paper-lines
+  );
+  background-size: 100% 2.2rem;
+  line-height: 2.2rem;
+  position: relative;
+  padding: 2.4rem 20px 10px;
+}
