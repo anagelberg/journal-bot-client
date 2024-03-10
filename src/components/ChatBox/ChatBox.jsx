@@ -6,7 +6,7 @@ import { ReactComponent as SendIcon } from '../../assets/icons/send.svg';
 import './ChatBox.scss';
 import axios from "axios";
 
-function ChatBox({ isSideBarOpen }) {
+function ChatBox({ isSideBarOpen, isTodaySelected }) {
     //TODO: improve the enter key functionality for better UI
 
     const [entryText, setEntryText] = useState("");
@@ -46,7 +46,7 @@ function ChatBox({ isSideBarOpen }) {
 
     return (
         <div className={`chatbox ${isSideBarOpen ? 'chatbox--sidebar-open' : "chatbox--expanded"}`}>
-            <div className="chatbox__conversation">
+            <div className={`chatbox__conversation ${isTodaySelected ? '' : 'chatbox__conversation--expanded'}`}>
                 {
                     messages.map((message, index) => {
                         if (message.role === "CHATBOT") {
@@ -58,20 +58,22 @@ function ChatBox({ isSideBarOpen }) {
                 }
             </div>
 
-            <form className="add-entry-form" onSubmit={(e) => {
-                e.preventDefault();
-                console.log("Form submitted");
-                handleAddEntry(entryText)
-                setEntryText("")
+            {isTodaySelected &&
+                <form className="add-entry-form" onSubmit={(e) => {
+                    e.preventDefault();
+                    console.log("Form submitted");
+                    handleAddEntry(entryText)
+                    setEntryText("")
+                }
+                }>
+                    <JournalEntry entryText={entryText} setEntryText={setEntryText} />
+                    <button type="submit" className="add-entry-form__button">
+                        <SendIcon className="add-entry-form__button-icon" />
+                    </button>
+
+
+                </form>
             }
-            }>
-                <JournalEntry entryText={entryText} setEntryText={setEntryText} />
-                <button type="submit" className="add-entry-form__button">
-                    <SendIcon className="add-entry-form__button-icon" />
-                </button>
-
-
-            </form>
         </div>
     )
 }

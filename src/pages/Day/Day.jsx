@@ -3,7 +3,7 @@ import ChatBox from '../../components/ChatBox/ChatBox';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function Day({ isSideBarOpen, setIsTodaySelected }) {
+function Day({ isSideBarOpen, setIsTodaySelected, isTodaySelected }) {
 
     const { date } = useParams();
 
@@ -17,9 +17,8 @@ function Day({ isSideBarOpen, setIsTodaySelected }) {
     }, [date])
 
 
-
     return (
-        <ChatBox isSideBarOpen={isSideBarOpen} />
+        <ChatBox isSideBarOpen={isSideBarOpen} isTodaySelected={isTodaySelected} />
     )
 }
 

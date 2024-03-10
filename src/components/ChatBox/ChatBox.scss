@@ -53,5 +53,9 @@
   &__conversation {
     max-height: 70%;
     overflow: auto;
+
+    &--expanded {
+      max-height: 100%;
+    }
   }
 }

@@ -20,8 +20,8 @@ function App() {
 
           {/* Routes go here */}
           <Routes>
-            <Route path='/' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} />} />
-            <Route path='/:date' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} />} />
+            <Route path='/' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} />} />
+            <Route path='/:date' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} />} />
           </Routes>
         </div>
 
