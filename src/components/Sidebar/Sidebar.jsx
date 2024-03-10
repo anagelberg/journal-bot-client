@@ -6,7 +6,7 @@ import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg';
 import { NavLink } from "react-router-dom";
 
 
-function Sidebar({ isOpen, setIsOpen }) {
+function Sidebar({ isOpen, setIsOpen, isTodaySelected }) {
     const [mood, setMood] = useState('insightful');
 
     // get these from the api
@@ -49,7 +49,7 @@ function Sidebar({ isOpen, setIsOpen }) {
         return (
             <div className='sidebar'>
                 <CloseX className='sidebar__closeX' onClick={() => setIsOpen(false)} />
-                <MoodBox mood={mood} setMood={setMood} />
+                <MoodBox mood={mood} setMood={setMood} isTodaySelected={isTodaySelected} />
 
                 <div className='sidebar__dates'>
                     <h2>More Journal Entries</h2>

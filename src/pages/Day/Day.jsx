@@ -3,13 +3,17 @@ import ChatBox from '../../components/ChatBox/ChatBox';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function Day({ isSideBarOpen }) {
+function Day({ isSideBarOpen, setIsTodaySelected }) {
 
     const { date } = useParams();
 
-    /* when date changes, also need to reload the sidebar -- placeholder */
     useEffect(() => {
-        console.log(date);
+        const currentDate = new Date().toISOString().split('T')[0];
+        if (date === currentDate) {
+            setIsTodaySelected(true);
+        } else {
+            setIsTodaySelected(false);
+        }
     }, [date])
 
 
