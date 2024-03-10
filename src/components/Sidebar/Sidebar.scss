@@ -3,6 +3,8 @@
 
 .sidebar {
   width: 100%;
+  background-color: white;
+  overflow: auto;
   @include tablet {
     min-width: 17%;
   }
@@ -18,5 +20,24 @@
     position: absolute;
     left: 2rem;
     top: 1rem;
+  }
+
+  &__dates {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin: 2rem;
+  }
+
+  &__date-link {
+    font-size: 1.5rem;
+    color: $secondary-text;
+    border-radius: $border-radius;
+    text-decoration: none;
+    padding: 1rem;
+
+    &.active {
+      background-color: $secondary-background;
+    }
   }
 }
