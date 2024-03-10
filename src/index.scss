@@ -23,3 +23,21 @@ textarea,
 input {
   font-family: inherit;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0.6rem;
+
+  &-thumb {
+    background-color: $primary-background;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-color: darken($primary-background, 20%);
+    }
+  }
+
+  &-track {
+    background-color: white;
+  }
+}
