@@ -3,6 +3,7 @@
 
 .journal-entry {
   width: 100%;
+  padding: 0 1rem 1rem;
 
   &__field {
     @include lined-background;
@@ -13,6 +14,8 @@
     width: 100%;
     resize: none;
     height: 11rem;
+    border: none;
+    box-shadow: $box-shadow;
 
     &:focus {
       outline: none;

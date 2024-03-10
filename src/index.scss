@@ -10,6 +10,10 @@
 body {
   background-color: $secondary-background;
   color: $primary-text;
+  max-height: 100vh;
+  min-height: 95vh;
+  max-width: 100vw;
+  padding: 1rem;
   //add a font
 }
 
