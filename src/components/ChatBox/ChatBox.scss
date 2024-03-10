@@ -1,0 +1,29 @@
+.add-entry-form {
+  width: 100%;
+  position: relative;
+
+  &__button {
+    position: absolute;
+    right: 1rem;
+    top: 5px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__button-icon {
+    width: 70px;
+    height: 70px;
+
+    &:hover {
+      cursor: pointer;
+      fill: black;
+    }
+  }
+}
+
+.chatbox {
+  background-color: white;
+  max-width: 80%;
+  margin: 1rem;
+  padding: 2rem;
+}

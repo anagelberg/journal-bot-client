@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import BotChatBubble from "../BotChatBubble/BotChatBubble";
 import UserChatBubble from "../UserChatBubble/UserChatBubble";
 import JournalEntry from "../JournalEntry/JournalEntry";
-// import { ReactComponent as SendIcon } from '../../assets/icons/send.svg';
-
+import { ReactComponent as SendIcon } from '../../assets/icons/send.svg';
+import './ChatBox.scss';
 
 function ChatBox() {
-
+    //TODO: improve the enter key functionality for better UI
 
     const [entryText, setEntryText] = useState("");
     const [messages, setMessages] = useState([
@@ -28,9 +28,6 @@ function ChatBox() {
         }
     ]);
 
-    useEffect(() => {
-        console.log("Changed Entry text: ", entryText)
-    }, [entryText])
 
 
     const handleAddEntry = (entryText) => {
@@ -46,7 +43,7 @@ function ChatBox() {
     };
 
     return (
-        <>
+        <div className="chatbox">
             {
                 messages.map(message => {
                     if (message.role === "CHATBOT") {
@@ -57,7 +54,7 @@ function ChatBox() {
                 })
             }
 
-            <form onSubmit={(e) => {
+            <form className="add-entry-form" onSubmit={(e) => {
                 e.preventDefault();
                 console.log("Form submitted");
                 handleAddEntry(entryText)
@@ -65,9 +62,13 @@ function ChatBox() {
             }
             }>
                 <JournalEntry entryText={entryText} setEntryText={setEntryText} />
-                <button type="submit">Add entry</button>
+                <button type="submit" className="add-entry-form__button">
+                    <SendIcon className="add-entry-form__button-icon" />
+                </button>
+
+
             </form>
-        </>
+        </div>
     )
 }
 

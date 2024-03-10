@@ -1,5 +1,5 @@
 .journal-entry {
-  margin-top: 5rem;
+  width: 100%;
 
   &__field {
     background-color: #fffbea; /* Light yellow for a paper-like effect */
@@ -17,8 +17,9 @@
     font-size: 16px;
     color: #4a4a4a;
     line-height: 1.5rem;
-    width: 80%;
+    width: 100%;
     resize: vertical;
+    height: 4.5rem;
 
     &:focus {
       outline: none;
