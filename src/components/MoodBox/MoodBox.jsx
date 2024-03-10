@@ -6,6 +6,7 @@ import calm from '../../assets/mood/calm.png';
 import fearful from '../../assets/mood/fearful.png';
 import insightful from '../../assets/mood/insightful.png';
 import thinking from '../../assets/mood/thinking.png';
+import axios from 'axios';
 
 function MoodBox({ mood, setMood, isTodaySelected }) {
     const imgs = {
@@ -24,11 +25,10 @@ function MoodBox({ mood, setMood, isTodaySelected }) {
         });
     }
 
-    const getTodayMood = () => {
-        const moods = Object.keys(imgs);
-        const randomMood = moods[Math.floor(Math.random() * (moods.length - 1))]; //exclude thinking
-        console.log(randomMood)
-        setMood(randomMood);
+    const getTodayMood = async () => {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/mood`)
+        console.log(response);
+        setMood(response.data.mood_of_the_day.toLowerCase());
     }
 
 
