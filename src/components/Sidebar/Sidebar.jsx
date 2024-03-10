@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 
 function Sidebar({ isOpen, setIsOpen, isTodaySelected }) {
-    const [mood, setMood] = useState('insightful');
+    const [mood, setMood] = useState('thinking');
 
     // get these from the api
     const [dates, setDates] = useState(['2024-03-09', '2024-03-01', '2024-02-29', '2024-02-20', '2024-01-30', '2024-01-12', '2024-01-11', '2024-01-01']);
