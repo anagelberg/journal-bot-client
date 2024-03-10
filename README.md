@@ -1,8 +1,8 @@
-# React + Vite
+This is our frontend  for the cmd-f 2024 hackathon! 
+The backend repo is here: https://github.com/wendytso/journal-bot-server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website is deployed here: 
 
-Currently, two official plugins are available:
+Thank you for exploring our project!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
