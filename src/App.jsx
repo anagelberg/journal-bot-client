@@ -41,7 +41,7 @@ function App() {
 
           {/* Routes go here */}
           <Routes>
-            <Route path='/' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} />} />
+            <Route path='/' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} setSelectedDate={setSelectedDate} />} />
             <Route path='/:date' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} dates={dates} setSelectedDate={setSelectedDate} selectedDate={selectedDate} />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
