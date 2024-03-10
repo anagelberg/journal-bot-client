@@ -13,7 +13,9 @@ function App() {
   const [isTodaySelected, setIsTodaySelected] = useState(true);
 
   // get these from the api
-  const [dates, setDates] = useState(['2024-03-09', '2024-03-01', '2024-02-29', '2024-02-20', '2024-01-30', '2024-01-12', '2024-01-11', '2024-01-01']);
+  // anger, calm, sad, worry
+  
+  const [dates, setDates] = useState(['2024-03-09', '2024-03-01', '2024-02-29', '2024-02-20']);
 
   useEffect(() => {
     const currentDate = new Date().toISOString().split('T')[0];
