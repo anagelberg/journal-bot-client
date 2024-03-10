@@ -11,11 +11,17 @@ import { BrowserRouter, Routes } from 'react-router-dom';
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   const [isTodaySelected, setIsTodaySelected] = useState(true);
+  const [selectedDate, setSelectedDate] = useState('2024-03-10');
 
   // get these from the api
   // anger, calm, sad, worry
-  
+
+
   const [dates, setDates] = useState(['2024-03-09', '2024-03-01', '2024-02-29', '2024-02-20']);
+
+  useEffect(() => {
+    console.log("selected Date", selectedDate)
+  }, [selectedDate]);
 
   useEffect(() => {
     const currentDate = new Date().toISOString().split('T')[0];
@@ -31,12 +37,12 @@ function App() {
       <div className="app">
         <h1 className='app__title'>Journal GPT</h1>
         <div className='app__day'>
-          <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} isTodaySelected={isTodaySelected} dates={dates} setDates={setDates} />
+          <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} isTodaySelected={isTodaySelected} dates={dates} setDates={setDates} selectedDate={selectedDate} />
 
           {/* Routes go here */}
           <Routes>
             <Route path='/' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} />} />
-            <Route path='/:date' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} dates={dates} />} />
+            <Route path='/:date' element={<Day isSideBarOpen={isOpen} setIsTodaySelected={setIsTodaySelected} isTodaySelected={isTodaySelected} dates={dates} setSelectedDate={setSelectedDate} selectedDate={selectedDate} />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
