@@ -1,17 +1,20 @@
+@use "../../styles/variables.scss" as *;
+
 .journal-entry {
   width: 100%;
 
   &__field {
-    background-color: #fffbea; /* Light yellow for a paper-like effect */
+    background-color: $paper;
     background-image: linear-gradient(
       to bottom,
       transparent 97%,
-      #ccc 97%,
-      #ccc 100%
+      #dcd9c6 97%,
+      #dcd9c6 100%
     );
+
     background-size: 100% 1.5rem;
     padding: 26px 20px 10px;
-    border-radius: 10px;
+    border-radius: $border-radius;
     border: 1px solid #ddd;
     font-family: "Indie Flower", cursive;
     font-size: 16px;

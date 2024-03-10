@@ -1,12 +1,15 @@
+@use "../../styles/variables.scss" as *;
+
 .user-chat-bubble {
   &__message {
-    background-color: #fffbea;
+    background-color: $paper;
     background-image: linear-gradient(
       to bottom,
       transparent 97%,
-      #ccc 97%,
-      #ccc 100%
+      #dcd9c6 97%,
+      #dcd9c6 100%
     );
+
     background-size: 100% 1.5rem;
     padding: 26px 20px 10px;
     border-radius: 20px;

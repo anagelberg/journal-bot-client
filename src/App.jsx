@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ChatBox from './components/ChatBox/ChatBox';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
-    <>
-      <h1>Journal GPT</h1>
+    <div className="app">
+      <h1 className='app__title'>Journal GPT</h1>
       <ChatBox />
-    </>
+    </div>
   );
 }
 

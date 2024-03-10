@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .add-entry-form {
   width: 100%;
   position: relative;
@@ -26,4 +28,8 @@
   max-width: 80%;
   margin: 1rem;
   padding: 2rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

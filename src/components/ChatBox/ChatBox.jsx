@@ -44,15 +44,17 @@ function ChatBox() {
 
     return (
         <div className="chatbox">
-            {
-                messages.map(message => {
-                    if (message.role === "CHATBOT") {
-                        return <BotChatBubble message={message.message} />
-                    } else {
-                        return <UserChatBubble message={message.message} />
-                    }
-                })
-            }
+            <div>
+                {
+                    messages.map((message, index) => {
+                        if (message.role === "CHATBOT") {
+                            return <BotChatBubble key={index} message={message.message} />
+                        } else {
+                            return <UserChatBubble key={index} message={message.message} />
+                        }
+                    })
+                }
+            </div>
 
             <form className="add-entry-form" onSubmit={(e) => {
                 e.preventDefault();
