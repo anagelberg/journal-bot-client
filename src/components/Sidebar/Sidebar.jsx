@@ -46,6 +46,7 @@ function Sidebar({ isOpen, setIsOpen, isTodaySelected, dates, setDates }) {
                     {dates.map((date, index) => {
                         return (
                             <NavLink
+                                key={index}
                                 className="sidebar__date-link"
                                 to={`${date}`}
                                 onClick={() => window.innerWidth <= 767 && setIsOpen(false)}
