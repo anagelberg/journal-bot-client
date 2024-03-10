@@ -6,7 +6,8 @@
   background-color: white;
   overflow: auto;
   @include tablet {
-    min-width: 17%;
+    min-width: 20%;
+    max-width: 20%;
   }
   position: relative;
 

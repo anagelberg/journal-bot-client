@@ -6,12 +6,8 @@ import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg';
 import { NavLink } from "react-router-dom";
 
 
-function Sidebar({ isOpen, setIsOpen, isTodaySelected }) {
+function Sidebar({ isOpen, setIsOpen, isTodaySelected, dates, setDates }) {
     const [mood, setMood] = useState('thinking');
-
-    // get these from the api
-    const [dates, setDates] = useState(['2024-03-09', '2024-03-01', '2024-02-29', '2024-02-20', '2024-01-30', '2024-01-12', '2024-01-11', '2024-01-01']);
-
 
     function formatReadableDate(dateString) {
 
@@ -35,13 +31,7 @@ function Sidebar({ isOpen, setIsOpen, isTodaySelected }) {
         return humanReadable;
     }
 
-    useEffect(() => {
-        const currentDate = new Date().toISOString().split('T')[0];
 
-        if (!dates.includes(currentDate)) {
-            setDates([currentDate, ...dates]);
-        }
-    }, [dates]);
 
 
 
@@ -56,6 +46,7 @@ function Sidebar({ isOpen, setIsOpen, isTodaySelected }) {
                     {dates.map((date, index) => {
                         return (
                             <NavLink
+                                key={index}
                                 className="sidebar__date-link"
                                 to={`${date}`}
                                 onClick={() => window.innerWidth <= 767 && setIsOpen(false)}

@@ -63,10 +63,9 @@ function ChatBox({ isSideBarOpen, isTodaySelected }) {
                     e.preventDefault();
                     console.log("Form submitted");
                     handleAddEntry(entryText)
-                    setEntryText("")
                 }
                 }>
-                    <JournalEntry entryText={entryText} setEntryText={setEntryText} />
+                    <JournalEntry entryText={entryText} setEntryText={setEntryText} handleAddEntry={handleAddEntry} />
                     <button type="submit" className="add-entry-form__button">
                         <SendIcon className="add-entry-form__button-icon" />
                     </button>
