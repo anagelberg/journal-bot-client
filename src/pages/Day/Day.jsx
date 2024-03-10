@@ -3,7 +3,7 @@ import ChatBox from '../../components/ChatBox/ChatBox';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function Day({ isSideBarOpen, setIsTodaySelected, isTodaySelected, dates }) {
+function Day({ isSideBarOpen, setIsTodaySelected, isTodaySelected, dates, setSelectedDate }) {
 
     const { date } = useParams();
     const navigate = useNavigate();
@@ -19,6 +19,7 @@ function Day({ isSideBarOpen, setIsTodaySelected, isTodaySelected, dates }) {
         } else {
             setIsTodaySelected(false);
         }
+        setSelectedDate(date);
     }, [date])
 
 
