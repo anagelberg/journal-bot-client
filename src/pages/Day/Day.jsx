@@ -23,7 +23,7 @@ function Day({ isSideBarOpen, setIsTodaySelected, isTodaySelected, dates }) {
 
 
     return (
-        <ChatBox isSideBarOpen={isSideBarOpen} isTodaySelected={isTodaySelected} />
+        <ChatBox isSideBarOpen={isSideBarOpen} isTodaySelected={isTodaySelected} date={date} />
     )
 }
 
