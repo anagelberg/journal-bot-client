@@ -6,7 +6,7 @@ import { ReactComponent as SendIcon } from '../../assets/icons/send.svg';
 import './ChatBox.scss';
 import axios from "axios";
 
-function ChatBox() {
+function ChatBox({ isSideBarOpen }) {
     //TODO: improve the enter key functionality for better UI
 
     const [entryText, setEntryText] = useState("");
@@ -45,7 +45,7 @@ function ChatBox() {
     };
 
     return (
-        <div className="chatbox">
+        <div className={`chatbox ${isSideBarOpen ? 'chatbox--sidebar-open' : "chatbox--expanded"}`}>
             <div className="chatbox__conversation">
                 {
                     messages.map((message, index) => {

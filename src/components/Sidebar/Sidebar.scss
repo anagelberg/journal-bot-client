@@ -1,0 +1,22 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.sidebar {
+  width: 100%;
+  @include tablet {
+    min-width: 17%;
+  }
+  position: relative;
+
+  &__closeX {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &__hamburger {
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+  }
+}

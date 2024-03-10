@@ -1,15 +1,11 @@
 import './Day.scss';
 import ChatBox from '../../components/ChatBox/ChatBox';
-import MoodBox from '../../components/MoodBox/MoodBox';
+import { useState } from 'react';
 
-function Day() {
-
+function Day({ isSideBarOpen }) {
 
     return (
-        <div className='day'>
-            <ChatBox />
-            <MoodBox mood="happy" />
-        </div>
+        <ChatBox isSideBarOpen={isSideBarOpen} />
     )
 }
 

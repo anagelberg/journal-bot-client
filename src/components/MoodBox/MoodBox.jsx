@@ -6,7 +6,7 @@ import calm from '../../assets/mood/calm.png';
 import fearful from '../../assets/mood/fearful.png';
 import insightful from '../../assets/mood/insightful.png';
 
-function MoodBox({ mood }) {
+function MoodBox({ mood, setMood }) {
     const imgs = {
         happy,
         angry,
@@ -22,13 +22,22 @@ function MoodBox({ mood }) {
         });
     }
 
+    const getTodayMood = () => {
+        const moods = Object.keys(imgs);
+        const randomMood = moods[Math.floor(Math.random() * moods.length)];
+        console.log(randomMood)
+        setMood(randomMood);
+    }
+
+
     return (
         <div className="moodbox">
             <h2>Today's mood</h2>
             <div className='moodbox__img-box'>
                 <img className="moodbox__img" src={imgs[mood]} alt={`${mood} mood icon`} />
             </div>
-            <h3 className="moodbox__mood-title">{toTitleCase(mood)}</h3>
+            <h3 className="moodbox__mood-title">- {toTitleCase(mood)} -</h3>
+            <button className="moodbox__button" onClick={() => getTodayMood()}>Get or Update Mood</button>
         </div>
     );
 }
