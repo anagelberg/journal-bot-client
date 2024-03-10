@@ -4,6 +4,7 @@ import UserChatBubble from "../UserChatBubble/UserChatBubble";
 import JournalEntry from "../JournalEntry/JournalEntry";
 import { ReactComponent as SendIcon } from '../../assets/icons/send.svg';
 import './ChatBox.scss';
+import axios from "axios";
 
 function ChatBox() {
     //TODO: improve the enter key functionality for better UI
@@ -13,33 +14,34 @@ function ChatBox() {
         {
             message: "Hello, how are you feeling today?",
             role: "CHATBOT",
-        },
-        {
-            message: "I'm doing okay, I guess.",
-            role: "USER",
-        },
-        {
-            message: "What could make it better?",
-            role: "CHATBOT",
-        },
-        {
-            message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            role: "USER",
         }
     ]);
 
 
-
-    const handleAddEntry = (entryText) => {
-
-        // will change to grab from the backend
-        setMessages([
-            ...messages,
+    const handleAddEntry = async (entryText) => {
+        setMessages(prevMessages => [
+            ...prevMessages,
             {
                 message: entryText,
-                type: "USER"
+                role: "USER"
             }
-        ])
+        ]);
+
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/chat`, {
+                user_message: entryText
+            });
+
+            setMessages(prevMessages => [
+                ...prevMessages,
+                {
+                    message: response.data.chatbot_response,
+                    role: "CHATBOT"
+                }
+            ]);
+        } catch (error) {
+            console.error("Error in getting chatbot response:", error);
+        }
     };
 
     return (

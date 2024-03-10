@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import ChatBox from './components/ChatBox/ChatBox';
+
+import Day from './pages/Day/Day';
 import './App.scss';
 
 function App() {
   return (
     <div className="app">
       <h1 className='app__title'>Journal GPT</h1>
-      <ChatBox />
+      <div className='app__day'>
+        {/* Routes go here */}
+        <Day />
+      </div>
+
     </div>
   );
 }

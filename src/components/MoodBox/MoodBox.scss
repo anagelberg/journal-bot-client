@@ -1,0 +1,28 @@
+.moodbox {
+  background-color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  height: 100%;
+  width: 40%;
+
+  &__img-box {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  &__img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    object-position: 50% 50%;
+  }
+
+  //   &__title {
+  //   }
+}
