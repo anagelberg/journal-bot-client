@@ -1,21 +1,24 @@
+@use '../../styles/variables' as *;
+
 .bot-chat-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1rem;
   &__name {
-    font-size: 14px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #6a8a9d;
-    margin-bottom: 5px;
+    color: $secondary-text;
   }
 
   &__message {
-    background-color: #fafafa;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: $primary-background;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    font-size: 1.7rem;
     padding: 15px 20px;
-    max-width: 100%;
+    max-width: 80%;
     margin: 10px 0;
-    border: 1px solid #e0e0e0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #5a5a5a;
-    line-height: 1.5;
+    color: $secondary-text;
   }
 }
