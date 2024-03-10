@@ -1,33 +1,25 @@
 @use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
 
 .user-chat-bubble {
-  &__message {
-    background-color: $paper;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 97%,
-      #dcd9c6 97%,
-      #dcd9c6 100%
-    );
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-    background-size: 100% 1.5rem;
-    padding: 26px 20px 10px;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  &__message {
+    @include lined-background;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
     font-family: "Indie Flower", cursive;
-    font-size: 16px;
-    color: #555;
-    border: 1px solid #ddd;
+    font-size: 2rem;
+    color: $primary-text;
     margin: 10px 0;
-    max-width: 100%;
-    line-height: 1.5rem;
-    position: relative;
+    max-width: 80%;
   }
 
   &__name {
-    font-size: 14px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #6a8a9d;
-    margin-bottom: 5px;
+    color: $secondary-text;
   }
 }
